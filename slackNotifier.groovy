@@ -4,6 +4,8 @@ final TOKEN = "kXvuJfAZwudfk6lHSxvduEaY"
 
 def call(String buildResult) {
 
+    println buildResult
+
   if ( buildResult == "SUCCESS" ) {
     slackSend teamDomain: println TEAMDOMAIN, channel: CHANNEL, token: TOKEN,
               color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful"
