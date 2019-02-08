@@ -3,7 +3,7 @@ def call(String buildResult) {
 
   if ( buildResult == "SUCCESS" ) {
     slackSend teamDomain: "${params.teamDomain}", channel: "${params.channel}", token: "${params.token}",
-              color: "good", message: "${currentBuild.fullDisplayName} completado con exito ${evn.BUILD_TAG}"
+              color: "good", message: "${currentBuild.fullDisplayName} completado con exito ${env.BUILD_TAG}"
   }
   else if( buildResult == "FAILURE" ) { 
     slackSend teamDomain: "${params.teamDomain}", channel: "${params.channel}", token: "${params.token}",
