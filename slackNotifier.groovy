@@ -1,8 +1,11 @@
+final TEAMDOMAIN = "negocio-eps"
+final CHANNEL = "#pipeline-as-code"
+final TOKEN = "kXvuJfAZwudfk6lHSxvduEaY"
 
 def call(String buildResult) {
 
   if ( buildResult == "SUCCESS" ) {
-    slackSend teamDomain: "${params.teamDomain}", channel: "${params.channel}", token: "${params.token}",
+    slackSend teamDomain: TEAMDOMAIN, channel: CHANNEL, token: TOKEN,
               color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful"
   }
   else if( buildResult == "FAILURE" ) { 
